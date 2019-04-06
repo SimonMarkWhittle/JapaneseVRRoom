@@ -420,7 +420,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u4F55"
+  m_text: "\u4F55 the fuck did you just \u8A00\u3044\u307E\u3059 to \u79C1 \u3067\u3059\u304B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b06d9a0ad0c8b3341831498027378c69, type: 2}
   m_sharedMaterial: {fileID: 21072561589427240, guid: b06d9a0ad0c8b3341831498027378c69,
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 29
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -490,12 +490,12 @@ MonoBehaviour:
   m_margin: {x: 3.1321726, y: 0, z: 3.3103871, w: 0}
   m_textInfo:
     textComponent: {fileID: 273448532}
-    characterCount: 1
+    characterCount: 37
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 9
+    wordCount: 10
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

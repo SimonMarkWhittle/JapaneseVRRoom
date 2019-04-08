@@ -77,7 +77,9 @@ public class Scanning : MonoBehaviour
             pointer.pointer.SetActive(true);
             pointer.color = Color.blue;
 
-            VocabItem vocab = hit.collider.GetComponent<VocabItem>();
+            //VocabItem vocab = hit.collider.GetComponent<VocabItem>();
+            VocabItem vocab = hit.collider.GetComponentInChildren<VocabItem>();
+
 
             if (vocab != null) {
                 vocab.StartDisplay();

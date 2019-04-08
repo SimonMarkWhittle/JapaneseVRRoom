@@ -19,6 +19,10 @@ public class Scanning : MonoBehaviour
 
     public bool allowScanWhileAttached = false;
 
+    private VocabItem lastVocab = null;
+
+    //private bool scanning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +46,17 @@ public class Scanning : MonoBehaviour
         {
             if (IsScanButtonDown(hand))
             {
+                //scanning = true;
                 Scan(hand);
             }
             else if (IsEligibleForScan(hand)) {
                 pointer = hand.gameObject.GetComponent<SteamVR_LaserPointer>();
-                pointer.color = Color.clear;
+                pointer.pointer.SetActive(false);
+                if (lastVocab != null)
+                {
+                    lastVocab.EndDisplay();
+                    lastVocab = null;
+                }
             }
         }
     }
@@ -63,8 +73,23 @@ public class Scanning : MonoBehaviour
             Vector3 pos1 = hTransform.position;
             Vector3 pos2 = hTransform.TransformDirection(Vector3.forward) * hit.distance;
 
-            pointer.active = true;
+            //pointer.active = true;
+            pointer.pointer.SetActive(true);
             pointer.color = Color.blue;
+
+            VocabItem vocab = hit.collider.GetComponent<VocabItem>();
+
+            if (vocab != null) {
+                vocab.StartDisplay();
+            }
+            if (vocab != lastVocab && lastVocab != null)
+            {
+                lastVocab.EndDisplay();
+                lastVocab = vocab;
+            } else
+            {
+                lastVocab = vocab;
+            }
         }
         else
         {
@@ -74,6 +99,11 @@ public class Scanning : MonoBehaviour
             Vector3 pos2 = hTransform.TransformDirection(Vector3.forward) * 1000f;
 
             pointer.color = Color.white;
+            if (lastVocab != null)
+            {
+                lastVocab.EndDisplay();
+                lastVocab = null;
+            }
         }
     }
 

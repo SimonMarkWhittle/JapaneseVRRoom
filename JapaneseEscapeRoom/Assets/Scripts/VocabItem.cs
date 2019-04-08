@@ -8,7 +8,9 @@ public class VocabItem : MonoBehaviour
 {
     Animator animator;
     int fade_hash;
+
     AudioSource source;
+
     public List<TextMeshPro> texts;
 
     // Start is called before the first frame update
@@ -18,12 +20,6 @@ public class VocabItem : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         fade_hash = Animator.StringToHash("FadeIn");
         source = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void StartDisplay()

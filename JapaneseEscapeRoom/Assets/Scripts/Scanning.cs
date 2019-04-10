@@ -36,7 +36,8 @@ public class Scanning : MonoBehaviour
         }
 
         pointer = GetComponent<SteamVR_LaserPointer>();
-        pointer.color = Color.clear;
+        //pointer.color = Color.clear;
+        pointer.pointer.SetActive(false);
     }
 
     // Update is called once per frame

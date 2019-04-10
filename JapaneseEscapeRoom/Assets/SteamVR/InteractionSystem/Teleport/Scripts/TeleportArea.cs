@@ -62,6 +62,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public override void Highlight( bool highlight )
 		{
+            /*
 			if ( !locked )
 			{
 				highlighted = highlight;
@@ -75,21 +76,25 @@ namespace Valve.VR.InteractionSystem
 					areaMesh.material = Teleport.instance.areaVisibleMaterial;
 				}
 			}
+            */
 		}
 
 
 		//-------------------------------------------------
 		public override void SetAlpha( float tintAlpha, float alphaPercent )
 		{
+            /*
 			Color tintedColor = GetTintColor();
 			tintedColor.a *= alphaPercent;
 			areaMesh.material.SetColor( tintColorId, tintedColor );
+            */
 		}
 
 
 		//-------------------------------------------------
 		public override void UpdateVisuals()
 		{
+            /*
 			if ( locked )
 			{
 				areaMesh.material = Teleport.instance.areaLockedMaterial;
@@ -98,6 +103,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				areaMesh.material = Teleport.instance.areaVisibleMaterial;
 			}
+            */
 		}
 
 
@@ -106,7 +112,7 @@ namespace Valve.VR.InteractionSystem
 		{
             if (Teleport.instance == null)
                 return;
-
+            /*
 			areaMesh = GetComponent<MeshRenderer>();
 
 			if ( locked )
@@ -117,6 +123,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				areaMesh.sharedMaterial = Teleport.instance.areaVisibleMaterial;
 			}
+            */
 		}
 
 
@@ -167,25 +174,30 @@ namespace Valve.VR.InteractionSystem
 	[CustomEditor( typeof( TeleportArea ) )]
 	public class TeleportAreaEditor : Editor
 	{
-		//-------------------------------------------------
-		void OnEnable()
-		{
-			if ( Selection.activeTransform != null )
-			{
-				TeleportArea teleportArea = Selection.activeTransform.GetComponent<TeleportArea>();
-				if ( teleportArea != null )
-				{
-					teleportArea.UpdateVisualsInEditor();
-				}
-			}
-		}
+        //-------------------------------------------------
+        /*
+        void OnEnable()
+        {
+            if (Selection.activeTransform != null)
+            {
+                TeleportArea teleportArea = Selection.activeTransform.GetComponent<TeleportArea>();
+
+                if (teleportArea != null)
+                {
+                    teleportArea.UpdateVisualsInEditor();
+                }
+
+            }
+        }
+        */
 
 
-		//-------------------------------------------------
-		public override void OnInspectorGUI()
+
+        //-------------------------------------------------
+        public override void OnInspectorGUI()
 		{
 			DrawDefaultInspector();
-
+            /*
 			if ( Selection.activeTransform != null )
 			{
 				TeleportArea teleportArea = Selection.activeTransform.GetComponent<TeleportArea>();
@@ -194,6 +206,7 @@ namespace Valve.VR.InteractionSystem
 					teleportArea.UpdateVisualsInEditor();
 				}
 			}
+            */
 		}
 	}
 #endif

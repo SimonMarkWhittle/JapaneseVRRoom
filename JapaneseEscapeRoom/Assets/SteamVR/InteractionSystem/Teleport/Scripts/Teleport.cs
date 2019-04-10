@@ -649,7 +649,7 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( teleportMarker != null && teleportMarker.markerActive && teleportMarker.gameObject != null )
 				{
-					teleportMarker.gameObject.SetActive( false );
+					//teleportMarker.gameObject.SetActive( false );
 				}
 			}
 
@@ -689,8 +689,8 @@ namespace Valve.VR.InteractionSystem
 				{
 					if ( teleportMarker.markerActive && teleportMarker.ShouldActivate( player.feetPositionGuess ) )
 					{
-						teleportMarker.gameObject.SetActive( true );
-						teleportMarker.Highlight( false );
+						//teleportMarker.gameObject.SetActive( true );
+						//teleportMarker.Highlight( false );
 					}
 				}
 
@@ -766,19 +766,21 @@ namespace Valve.VR.InteractionSystem
 			float deltaTime = Time.time - pointerShowStartTime;
 			if ( deltaTime > meshFadeTime )
 			{
-				meshAlphaPercent = 1.0f;
-				meshFading = false;
+				//meshAlphaPercent = 1.0f;
+				//meshFading = false;
 			}
 			else
 			{
-				meshAlphaPercent = Mathf.Lerp( 0.0f, 1.0f, deltaTime / meshFadeTime );
+				//meshAlphaPercent = Mathf.Lerp( 0.0f, 1.0f, deltaTime / meshFadeTime );
 			}
 
 			//Tint color for the teleport points
+            /*
 			foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
 			{
 				teleportMarker.SetAlpha( fullTintAlpha * meshAlphaPercent, meshAlphaPercent );
 			}
+            */
 		}
 
 
@@ -908,12 +910,12 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( pointedAtTeleportMarker != null )
 				{
-					pointedAtTeleportMarker.Highlight( false );
+					//pointedAtTeleportMarker.Highlight( false );
 				}
 
 				if ( hitTeleportMarker != null )
 				{
-					hitTeleportMarker.Highlight( true );
+					//hitTeleportMarker.Highlight( true );
 
 					prevPointedAtPosition = pointedAtPosition;
 					PlayPointerHaptic( !hitTeleportMarker.locked );

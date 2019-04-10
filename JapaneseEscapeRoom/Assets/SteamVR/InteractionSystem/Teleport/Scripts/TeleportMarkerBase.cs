@@ -29,7 +29,7 @@ namespace Valve.VR.InteractionSystem
 		{
 			this.locked = locked;
 
-			UpdateVisuals();
+			//UpdateVisuals();
 		}
 
 

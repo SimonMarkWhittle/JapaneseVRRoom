@@ -4,15 +4,72 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    List<EventTrigger> events;
+
+    int states = 0;
+    int statesAchieved = 0;
+    bool won = false;
+
+    public Animator achieveTextAnimator;
+
+    private static GameManager _instance;
+    public static GameManager instance {
+        get {
+            if ( _instance == null ) {
+                _instance = FindObjectOfType<GameManager>();
+            }
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
+    int fade_hash;
+
+    private void Start() {
+        if (achieveTextAnimator != null) {
+            fade_hash = Animator.StringToHash("FadeIn");
+        }
+    }
+
     void Update()
     {
-        
+        if (!won && statesAchieved >= states) {
+            Debug.Log("YAY! You win!");
+            won = true;
+        }
+    }
+
+    public void AddEvent(EventTrigger _event) {
+        _event.triggerEvent += StateAchieved;
+        _event.eventCancel += StateCanceled;
+        states += 1;
+    }
+
+    void StateAchieved() {
+        statesAchieved++;
+
+        AchieveText();
+    }
+
+    void StateCanceled() {
+        statesAchieved--;
+    }
+
+    void AchieveText() {
+        if (achieveTextAnimator != null) {
+            StartCoroutine("ShowAchieveText");
+        }
+    }
+
+    IEnumerator ShowAchieveText() {
+        float showTime = 5f;
+        float timer = 0f;
+
+        achieveTextAnimator.SetBool(fade_hash, true);
+        while (timer < showTime) {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        achieveTextAnimator.SetBool(fade_hash, false);
     }
 }

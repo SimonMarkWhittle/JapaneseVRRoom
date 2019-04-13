@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void EventDel();
-
 public class ButtonEvents : MonoBehaviour
 {
 

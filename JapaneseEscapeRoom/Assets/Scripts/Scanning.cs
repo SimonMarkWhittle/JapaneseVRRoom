@@ -163,12 +163,6 @@ public class Scanning : MonoBehaviour
         return false;
     }
 
-    void TryScan()
-    {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAA");
-        Debug.Log("SCAN SCAN SCAN");
-    }
-
     public bool IsEligibleForScan( Hand hand )
     {
         if ( hand == null)

@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
         statesAchieved++;
 
         AchieveText();
+
+        Debug.Log("よかった");
     }
 
     void StateCanceled() {

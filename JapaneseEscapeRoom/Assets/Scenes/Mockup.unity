@@ -3477,67 +3477,6 @@ Transform:
   m_Father: {fileID: 1363994610}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &912911613
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 912911614}
-  - component: {fileID: 912911616}
-  - component: {fileID: 912911615}
-  m_Layer: 0
-  m_Name: KeyDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &912911614
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912911613}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.855, z: 0.027}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 946405519}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &912911615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912911613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab138052bbe891b4a94e95d4b7f0b50f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyOnce: 1
-  reverseable: 0
-  tags:
-  - Key
---- !u!65 &912911616
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912911613}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23, y: 0.3, z: 0.12}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &922629129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3680,7 +3619,6 @@ Transform:
   - {fileID: 2002331515}
   - {fileID: 83922287}
   - {fileID: 1282798450}
-  - {fileID: 912911614}
   - {fileID: 2133530175}
   m_Father: {fileID: 931479643}
   m_RootOrder: 9
@@ -7915,7 +7853,7 @@ Transform:
   m_LocalScale: {x: 0.1351004, y: 0.17812, z: 0.057851925}
   m_Children: []
   m_Father: {fileID: 946405519}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -40.449, y: 0, z: 0}
 --- !u!65 &2133530176
 BoxCollider:

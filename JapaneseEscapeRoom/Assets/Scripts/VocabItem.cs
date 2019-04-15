@@ -26,7 +26,8 @@ public class VocabItem : MonoBehaviour
     {
         //SetText(true);
         animator.SetBool(fade_hash, true);
-        source.Play();
+        // source.Play();
+        //ReadText();
     }
 
     public void EndDisplay()
@@ -44,5 +45,8 @@ public class VocabItem : MonoBehaviour
                 text.enabled = state;
             }
         }
+    }
+
+    public void ReadText() {
     }
 }

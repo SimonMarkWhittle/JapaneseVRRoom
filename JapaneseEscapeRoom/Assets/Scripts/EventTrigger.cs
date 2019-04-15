@@ -9,13 +9,15 @@ public class EventTrigger : MonoBehaviour
     public EventDel triggerEvent;
     public EventDel eventCancel;
 
+    public bool isAchievement = true;
     public bool onlyOnce = true;
     protected bool doneOnce = false;
     public bool reverseable = false;
 
     protected virtual void Start() {
         GameManager gm = GameManager.instance;
-        gm.AddEvent(this);
+        if (isAchievement)
+            gm.AddEvent(this);
     }
 
     protected void TriggerEvent() {

@@ -9,6 +9,7 @@ TagManager:
   - JoeJeff
   - Window
   - Key
+  - BadKey
   layers:
   - Default
   - TransparentFX

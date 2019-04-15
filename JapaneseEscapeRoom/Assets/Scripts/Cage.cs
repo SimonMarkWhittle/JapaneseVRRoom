@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Cage : MonoBehaviour
 {
     Animator animator;
     int open_hash;
-    AreaTrigger trigger;
+    public AreaTrigger rightKey;
+    public AreaTrigger wrongKey;
+
+    public Animator wrongText;
+    int fade_hash;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +20,17 @@ public class Cage : MonoBehaviour
 
         open_hash = Animator.StringToHash("isOpen");
 
-        trigger = GetComponentInChildren<AreaTrigger>();
+        if (rightKey)
+            rightKey.triggerEvent += Open;
 
-        trigger.triggerEvent += Open;
+        if (wrongKey)
+            wrongKey.triggerEvent += WrongKey;
+
+        if (wrongText) {
+            fade_hash = Animator.StringToHash("FadeIn");
+        }
+
+
     }
 
     // Update is called once per frame
@@ -33,6 +46,25 @@ public class Cage : MonoBehaviour
             animator.SetBool(open_hash, true);
         }
 
-        Destroy(trigger.gameObject);
+        Destroy(rightKey.gameObject);
     }
+
+    void WrongKey() {
+        if (wrongText != null)
+            StartCoroutine("SayWrong");
+    }
+
+    IEnumerator SayWrong() {
+        float showTime = 5f;
+        float timer = 0f;
+
+        wrongText.SetBool(fade_hash, true);
+        while (timer < showTime) {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        wrongText.SetBool(fade_hash, false);
+    }
+
 }

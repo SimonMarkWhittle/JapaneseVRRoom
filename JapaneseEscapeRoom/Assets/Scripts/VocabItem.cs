@@ -6,7 +6,7 @@ using TMPro;
 [RequireComponent(typeof(AudioSource))]
 public class VocabItem : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     int fade_hash;
 
     AudioSource source;
@@ -17,7 +17,8 @@ public class VocabItem : MonoBehaviour
     void Start()
     {
         //SetText(false);
-        animator = GetComponentInChildren<Animator>();
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
         fade_hash = Animator.StringToHash("FadeIn");
         source = GetComponent<AudioSource>();
     }

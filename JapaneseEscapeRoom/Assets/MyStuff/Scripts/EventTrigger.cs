@@ -10,6 +10,7 @@ public class EventTrigger : MonoBehaviour
 {
     public EventDel triggerEvent;
     public EventDel eventCancel;
+    public EventDel achieveEvent;
 
     public Group group = Group.Group1;
 
@@ -20,7 +21,7 @@ public class EventTrigger : MonoBehaviour
 
     protected virtual void Start() {
         GameManager gm = GameManager.instance;
-        if (isAchievement && GameManager.CheckGroup(group))
+        if (isAchievement)
             gm.AddEvent(this);
     }
 
@@ -28,6 +29,8 @@ public class EventTrigger : MonoBehaviour
         if (onlyOnce && doneOnce) return;
         doneOnce = true;
         triggerEvent?.Invoke();
+        if (isAchievement && GameManager.CheckGroup(group))
+            achieveEvent?.Invoke();
     }
 
     protected void EventCancel() {

@@ -40,9 +40,7 @@ public class Cage : MonoBehaviour
     }
 
     void Open() {
-        Debug.Log("Doing Open");
         if (animator != null) {
-            Debug.Log("setting bool");
             animator.SetBool(open_hash, true);
         }
 

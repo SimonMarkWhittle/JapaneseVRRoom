@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddEvent(EventTrigger _event) {
-        _event.triggerEvent += StateAchieved;
+        _event.achieveEvent += StateAchieved;
         _event.eventCancel += StateCanceled;
         states += 1;
     }
@@ -80,5 +80,13 @@ public class GameManager : MonoBehaviour
     public static bool CheckGroup(Group _group)
     {
         return _group == activeGroup;
+    }
+
+    public static void SwapGroup()
+    {
+        if (activeGroup == Group.Group1)
+            activeGroup = Group.Group2;
+        else if (activeGroup == Group.Group2)
+            activeGroup = Group.Group1;
     }
 }

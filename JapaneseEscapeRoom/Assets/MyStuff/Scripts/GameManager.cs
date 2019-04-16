@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     public static bool CheckGroup(Group _group)
     {
-        return _group == activeGroup;
+        return (_group == Group.Both) || (_group == activeGroup);
     }
 
     public static void SwapGroup()

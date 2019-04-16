@@ -4,7 +4,7 @@ using UnityEngine;
 
 public delegate void EventDel();
 
-public enum Group { Group1, Group2 };
+public enum Group { Group1, Group2, Both };
 
 public class EventTrigger : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class EventTrigger : MonoBehaviour
     public EventDel eventCancel;
     public EventDel achieveEvent;
 
-    public Group group = Group.Group1;
+    public Group group = Group.Both;
 
     public bool isAchievement = true;
     public bool onlyOnce = true;

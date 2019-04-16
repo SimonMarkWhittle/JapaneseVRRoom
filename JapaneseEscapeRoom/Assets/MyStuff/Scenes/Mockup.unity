@@ -16676,7 +16676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab138052bbe891b4a94e95d4b7f0b50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
   isAchievement: 1
   onlyOnce: 1
   reverseable: 0
@@ -16741,7 +16741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab138052bbe891b4a94e95d4b7f0b50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
   isAchievement: 0
   onlyOnce: 1
   reverseable: 0
@@ -17899,7 +17899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab138052bbe891b4a94e95d4b7f0b50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 1
   isAchievement: 1
   onlyOnce: 1
   reverseable: 0
@@ -24001,7 +24001,7 @@ GameObject:
   - component: {fileID: 2133530176}
   - component: {fileID: 2133530179}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: rightDetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24092,7 +24092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab138052bbe891b4a94e95d4b7f0b50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
   isAchievement: 1
   onlyOnce: 1
   reverseable: 0

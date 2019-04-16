@@ -10,6 +10,7 @@ TagManager:
   - Window
   - Key
   - BadKey
+  - Torch
   layers:
   - Default
   - TransparentFX

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FakeButton : MonoBehaviour
 {
-    public TextMeshPro textMesh;
+    public Text faceText;
     public ButtonEvents button;
 
 
@@ -24,6 +25,6 @@ public class FakeButton : MonoBehaviour
     }
 
     void Batsu() {
-        textMesh.text = "X";
+        faceText.text = "X";
     }
 }

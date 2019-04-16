@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     int statesAchieved = 0;
     bool won = false;
 
+    public static Group activeGroup = Group.Group1;
+
     public Animator achieveTextAnimator;
 
     private static GameManager _instance;
@@ -73,5 +75,10 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         achieveTextAnimator.SetBool(fade_hash, false);
+    }
+
+    public static bool CheckGroup(Group _group)
+    {
+        return _group == activeGroup;
     }
 }

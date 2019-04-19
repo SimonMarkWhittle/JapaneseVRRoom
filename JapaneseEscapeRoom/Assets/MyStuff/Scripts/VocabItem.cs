@@ -21,6 +21,10 @@ public class VocabItem : MonoBehaviour
             animator = GetComponentInChildren<Animator>();
         fade_hash = Animator.StringToHash("FadeIn");
         source = GetComponent<AudioSource>();
+
+        if (GameManager.instance.alwaysText) {
+            StartDisplay();
+        }
     }
 
     public void StartDisplay()
@@ -33,6 +37,7 @@ public class VocabItem : MonoBehaviour
 
     public void EndDisplay()
     {
+        if (GameManager.instance.alwaysText) return;
         animator.SetBool(fade_hash, false);
         //SetText(false);
     }

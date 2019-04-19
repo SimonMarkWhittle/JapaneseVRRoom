@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     int statesAchieved = 0;
     bool won = false;
 
+    public bool alwaysText = false;
+
     public static Group activeGroup = Group.Group1;
 
     public Animator achieveTextAnimator;

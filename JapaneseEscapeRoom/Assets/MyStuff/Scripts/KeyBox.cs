@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyBox : MonoBehaviour
+public class KeyBox : EventTrigger
 {
 
     public ButtonEvents button;
@@ -12,8 +12,9 @@ public class KeyBox : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();
         isOpen_hash = Animator.StringToHash("isOpen");
 

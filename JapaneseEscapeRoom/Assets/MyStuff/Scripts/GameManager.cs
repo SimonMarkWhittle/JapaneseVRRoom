@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
     List<EventTrigger> events;
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     int states = 0;
     int statesAchieved = 0;
     bool won = false;
+
+    AudioSource source;
 
     public bool alwaysText = false;
 
@@ -32,6 +35,8 @@ public class GameManager : MonoBehaviour
         if (achieveTextAnimator != null) {
             fade_hash = Animator.StringToHash("FadeIn");
         }
+
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -52,6 +57,7 @@ public class GameManager : MonoBehaviour
         statesAchieved++;
 
         AchieveText();
+        source.Play();
 
         Debug.Log("よかった");
     }

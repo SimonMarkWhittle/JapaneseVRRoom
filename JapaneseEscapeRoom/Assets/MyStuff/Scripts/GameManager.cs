@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     {
         if (!won && statesAchieved >= states) {
             Debug.Log("YAY! You win!");
+            WinText();
             won = true;
         }
     }
@@ -56,7 +57,6 @@ public class GameManager : MonoBehaviour
     void StateAchieved() {
         statesAchieved++;
 
-        AchieveText();
         source.Play();
 
         Debug.Log("よかった");
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         statesAchieved--;
     }
 
-    void AchieveText() {
+    void WinText() {
         if (achieveTextAnimator != null) {
             StartCoroutine("ShowAchieveText");
         }

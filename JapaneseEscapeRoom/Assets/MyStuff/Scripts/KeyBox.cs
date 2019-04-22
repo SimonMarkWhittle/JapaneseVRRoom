@@ -31,5 +31,10 @@ public class KeyBox : EventTrigger
 
     void Open() {
         animator.SetBool(isOpen_hash, true);
+        if (onlyOnce && doneOnce) return;
+        doneOnce = true;
+        triggerEvent?.Invoke();
+        if (isAchievement && GameManager.CheckGroup(group))
+            achieveEvent?.Invoke();
     }
 }

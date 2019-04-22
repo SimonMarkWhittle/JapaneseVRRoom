@@ -28,7 +28,7 @@ public class GroupChoose : MonoBehaviour
 
     void Swappa()
     {
-        GameManager.SwapGroup();
+        GameManager.instance.SwapGroup();
 
         if (theText)
         {

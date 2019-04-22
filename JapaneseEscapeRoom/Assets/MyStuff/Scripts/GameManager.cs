@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
     List<EventTrigger> events;
 
     int states = 0;
+
+    int bothStates = 0;
+
+    int group1States = 0;
+    int group2States = 0;
+
     int statesAchieved = 0;
     bool won = false;
 
@@ -51,7 +57,15 @@ public class GameManager : MonoBehaviour
     public void AddEvent(EventTrigger _event) {
         _event.achieveEvent += StateAchieved;
         _event.eventCancel += StateCanceled;
-        states += 1;
+
+        if (_event.group == Group.Both) {
+            bothStates++;
+        } else if (_event.group == Group.Group1) {
+            group1States++;
+        } else if (_event.group == Group.Group2) {
+            group2States++;
+        }
+        SetStates();
     }
 
     void StateAchieved() {
@@ -90,11 +104,23 @@ public class GameManager : MonoBehaviour
         return (_group == Group.Both) || (_group == activeGroup);
     }
 
-    public static void SwapGroup()
+    public void SwapGroup()
     {
-        if (activeGroup == Group.Group1)
+        if (activeGroup == Group.Group1) {
             activeGroup = Group.Group2;
-        else if (activeGroup == Group.Group2)
+
+        } else if (activeGroup == Group.Group2) {
             activeGroup = Group.Group1;
+        }
+        SetStates();
+    }
+
+    void SetStates() {
+        if (activeGroup == Group.Group1) {
+            states = group2States + bothStates;
+
+        } else if (activeGroup == Group.Group2) {
+            states = group1States + bothStates;
+        }
     }
 }

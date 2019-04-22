@@ -256,6 +256,9 @@ namespace Valve.VR.InteractionSystem
 			{
 				trackingOriginTransform = this.transform;
 			}
+            if (_instance != null && _instance != this) {
+                Destroy(this.gameObject);
+            }
 		}
 
 

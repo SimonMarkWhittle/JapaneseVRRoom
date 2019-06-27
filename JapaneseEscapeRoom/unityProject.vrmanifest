@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.japaneseescaperoom.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\dml_patron\\Desktop\\proj\\JapaneseVRRoom\\JapaneseEscapeRoom\\actions.json",
+      "action_manifest_path": "C:\\Users\\Alan\\Desktop\\JapaneseVRRoom\\JapaneseEscapeRoom\\actions.json",
       "strings": {
         "en_us": {
           "name": "JapaneseEscapeRoom [Testing]"
